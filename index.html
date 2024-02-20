@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>JS Game</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #1e2a38; /* Azul oscuro */
+        }
+
+
+        .container__contenido {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .container__informaciones {
+            flex-grow: 1;
+            padding: 20px;
+            color: white;
+            text-align: left;
+        }
+
+        .container__texto {
+            margin-bottom: 20px;
+        }
+
+        .container__input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .container__botones {
+            display: flex;
+            gap: 10px;
+        }
+
+        .container__boton {
+            flex-grow: 1;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container__imagen-dibujo {
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+            filter: brightness(0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container__contenido">
+            <div class="container__informaciones">
+                <div class="container__texto">
+                    <h1>Juego del número secreto</h1>
+                    <p class="texto__parrafo"></p>
+                </div>
+                <input type="number" id="valorUsuario" min="1" max="10" class="container__input">
+                <div class="chute container__botones">
+                    <button onclick="verificarIntento();" class="container__boton">Intentar</button>
+                    <button onclick="reiniciarJuego();" id="reiniciar" disabled class="container__boton">Nuevo juego</button>
+                </div>
+            </div>
+            <img src="./img/imagen.png" alt="Guess My Number" class="container__imagen-dibujo" />
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
